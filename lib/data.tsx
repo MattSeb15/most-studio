@@ -22,52 +22,34 @@ import {
 	Layers,
 	MessageSquareCode,
 	Layout,
+	Rabbit,
+	Video,
+	BadgePercent,
 } from 'lucide-react'
+import {
+	FAQ,
+	PAY_METHOD,
+	PortfolioCategory,
+	PricingCategory,
+	SERVICES,
+	Service,
+} from './types'
 
-export const services = [
-	{
-		icon: <Code className='w-8 h-8' />,
-		title: 'Diseño y Desarrollo de Software',
-		description: 'Desarrollamos aplicaciones web y móviles a medida.',
-		accentColor1: '#3b82f6',
-		accentColor2: '#8b5cf6',
-	},
-	{
-		icon: <Megaphone className='w-8 h-8' />,
-		title: 'Marketing Digital',
-		description: 'Estrategias de marketing digital efectivas para tu negocio.',
-		accentColor1: '#8b5cf6',
-		accentColor2: '#ec4899',
-	},
-	{
-		icon: <BrainCircuit className='w-8 h-8' />,
-		title: 'Inteligencia Artificial',
-		description: 'Soluciones de IA personalizadas para tu negocio.',
-		accentColor1: '#f59e0b',
-		accentColor2: '#f87171',
-	},
-	{
-		icon: <PenTool className='w-6 h-6' />,
-		title: 'Diseño Gráfico',
-		description: 'Diseño visual impactante para tu marca.',
-		accentColor1: '#ec4899',
-		accentColor2: '#ef4444',
-	},
-	{
-		icon: <MessageSquareCode className='w-8 h-8' />,
-		title: 'Consultoría',
-		description: 'Asesoramiento experto para optimizar tu presencia digital.',
-		accentColor1: '#22c55e',
-		accentColor2: '#3b82f6',
-	},
+export const services: Service[] = [
+	SERVICES.SOFTWARE_DESIGN,
+	SERVICES.MARKETING,
+	SERVICES.AI,
+	SERVICES.VISUAL_PRODUCTION,
+	SERVICES.CONSULT,
 ]
 
-export const portfolioCategories = [
+export const portfolioCategories: PortfolioCategory[] = [
 	{
 		id: 'web-design',
 		title: 'Diseño Web',
 		icon: <Globe className='w-6 h-6' />,
 		description: 'Diseños web modernos y responsivos',
+		service: SERVICES.SOFTWARE_DESIGN,
 		projects: [
 			{
 				title: 'Portal Corporativo',
@@ -97,6 +79,7 @@ export const portfolioCategories = [
 		title: 'Desarrollo Web',
 		icon: <Code className='w-6 h-6' />,
 		description: 'Aplicaciones web modernas y escalables',
+		service: SERVICES.SOFTWARE_DESIGN,
 		projects: [
 			{
 				title: 'Plataforma SaaS',
@@ -126,11 +109,12 @@ export const portfolioCategories = [
 		title: 'Apps Móviles',
 		icon: <Smartphone className='w-6 h-6' />,
 		description: 'Aplicaciones nativas y multiplataforma',
+		service: SERVICES.SOFTWARE_DESIGN,
 		projects: [
 			{
 				title: 'App de Fitness',
 				image:
-					'https://images.unsplash.com/photo-1540563491646-4e7eff2d2c97?q=80&w=1000',
+					'https://media.licdn.com/dms/image/v2/D5612AQEz_EwPsFSQWw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1705065290862?e=2147483647&v=beta&t=MuslmkQmS6fYHoZBLb3a3HRnq1Kg60pZus8cepQWiGg',
 				description: 'Aplicación para seguimiento de actividad física',
 				tags: ['iOS', 'Android', 'React Native'],
 			},
@@ -155,6 +139,7 @@ export const portfolioCategories = [
 		title: 'Marketing Digital',
 		icon: <Megaphone className='w-6 h-6' />,
 		description: 'Estrategias de marketing efectivas',
+		service: SERVICES.MARKETING,
 		projects: [
 			{
 				title: 'Campaña E-commerce',
@@ -184,6 +169,7 @@ export const portfolioCategories = [
 		title: 'Soluciones IA',
 		icon: <BrainCircuit className='w-6 h-6' />,
 		description: 'Inteligencia artificial aplicada',
+		service: SERVICES.AI,
 		projects: [
 			{
 				title: 'Chatbot Atención Cliente',
@@ -213,6 +199,7 @@ export const portfolioCategories = [
 		title: 'Diseño Gráfico',
 		icon: <PenTool className='w-6 h-6' />,
 		description: 'Diseño visual impactante',
+		service: SERVICES.VISUAL_PRODUCTION,
 		projects: [
 			{
 				title: 'Identidad Corporativa',
@@ -234,6 +221,36 @@ export const portfolioCategories = [
 					'https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1000',
 				description: 'Materiales para campañas publicitarias',
 				tags: ['Publicidad', 'Campañas', 'Visual'],
+			},
+		],
+	},
+	{
+		id: 'video-production',
+		title: 'Producción de Video',
+		icon: <Video className='w-6 h-6' />,
+		description: 'Creación y edición de videos impactantes',
+		service: SERVICES.VISUAL_PRODUCTION,
+		projects: [
+			{
+				title: 'Edición de Video',
+				image:
+					'https://images.unsplash.com/photo-1581090124473-4d71aa51f0a8?q=80&w=1000',
+				description: 'Montaje, efectos y corrección de color',
+				tags: ['Edición', 'Postproducción', 'Corrección de color'],
+			},
+			{
+				title: 'Animación y Motion Graphics',
+				image:
+					'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1000',
+				description: 'Gráficos animados para contenido visual',
+				tags: ['Animación', 'Motion Graphics', 'VFX'],
+			},
+			{
+				title: 'Producción Audiovisual',
+				image:
+					'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1000',
+				description: 'Grabación y producción de videos',
+				tags: ['Grabación', 'Producción', 'Cinematografía'],
 			},
 		],
 	},
@@ -299,28 +316,30 @@ export const achievements = [
 		description: 'Satisfechos con nuestro trabajo',
 	},
 	{
-		icon: <Award className='w-6 h-6' />,
-		title: '15 Premios',
-		description: 'Reconocimientos de la industria',
-	},
-	{
 		icon: <Target className='w-6 h-6' />,
 		title: '100% Compromiso',
 		description: 'Con cada proyecto',
 	},
+	{
+		icon: <BadgePercent className='w-6 h-6' />,
+		title: 'Precios Accesibles',
+		description: 'Mejores del mercado',
+	},
 ]
 
 // Pricing data
-export const pricingCategories = [
+export const pricingCategories: PricingCategory[] = [
 	{
 		id: 'packs-completos',
 		title: 'Packs Completos',
 		icon: <Rocket className='w-6 h-6' />,
 		description: 'Soluciones integrales para tu negocio',
+		service: SERVICES.SOFTWARE_DESIGN,
 		plans: [
 			{
 				name: 'Nova Starter',
-				price: { monthly: '€799', annual: '€7,990' },
+				price: '$500',
+				payMethod: PAY_METHOD.ONCE,
 				description:
 					'Impulsa tu presencia digital con nuestro pack esencial para pequeños negocios.',
 				accentColor: '#3b82f6',
@@ -328,66 +347,425 @@ export const pricingCategories = [
 				ctaText: 'Despegar Ahora',
 				popular: false,
 				features: [
-					{ title: 'Diseño web responsive', included: true },
-					{ title: 'Hasta 5 páginas', included: true },
-					{ title: 'SEO básico', included: true },
-					{ title: 'Formulario de contacto', included: true },
-					{ title: 'Integración con redes sociales', included: true },
-					{ title: 'Dominio personalizado (1 año)', included: true },
-					{ title: 'Hosting (1 año)', included: true },
-					{ title: 'Soporte por email', included: true },
-					{ title: 'Campaña básica en redes sociales', included: true },
+					{
+						title: 'Diseño web responsive',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Hasta 5 páginas',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'SEO básico',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Formulario de contacto',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Integración con redes sociales',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Dominio personalizado (1 año)',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Hosting (1 año)',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Soporte por email',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'E-commerce',
+						included: false,
+						service_id: 'software-design',
+					},
+
+					{
+						title: 'Gestion básica de redes sociales',
+						included: true,
+						service_id: 'marketing',
+					},
+					{
+						title:
+							'Campaña básica en redes sociales (no incluye presupuesto publicitario)',
+						included: true,
+						service_id: 'marketing',
+					},
+					{
+						title: 'Diseño de Marca Básico',
+						service_id: 'graphic-design',
+					},
+					{
+						title: 'Diseño de hasta 5 Ads',
+						service_id: 'graphic-design',
+					},
+					{
+						title: 'Video(s)',
+						included: false,
+						service_id: 'graphic-design',
+					},
+					{
+						title:
+							'Chat Bot básico (Atención al cliente y preguntas frecuentes)',
+						service_id: 'ai',
+					},
+					{
+						title: 'Asesoramiento básico',
+						service_id: 'consult',
+					},
 					{ title: 'E-commerce', included: false },
-					{ title: 'Contenido personalizado', included: false },
+					{ title: 'Panel administrativo', included: false },
 					{ title: 'Análisis de competencia', included: false },
 				],
 			},
 			{
 				name: 'Quantum Business',
-				price: { monthly: '€1,499', annual: '€14,990' },
+				price: '$1200',
+				payMethod: PAY_METHOD.ONCE,
 				description:
-					'Solución completa para empresas que buscan destacar en el entorno digital.',
-				accentColor: '#8b5cf6',
-				secondaryColor: '#a78bfa',
-				ctaText: 'Potenciar Negocio',
+					'Potencia tu negocio con un paquete avanzado que incluye herramientas profesionales para crecimiento acelerado.',
+				accentColor: '#db2777', // Rosa vibrante
+				secondaryColor: '#f9a8d4', // Rosa claro
+				ctaText: 'Potenciar Ahora',
 				popular: true,
 				features: [
-					{ title: 'Diseño web responsive premium', included: true },
-					{ title: 'Hasta 10 páginas', included: true },
-					{ title: 'SEO avanzado', included: true },
-					{ title: 'Formulario de contacto avanzado', included: true },
-					{ title: 'Integración con redes sociales', included: true },
-					{ title: 'Dominio personalizado (1 año)', included: true },
-					{ title: 'Hosting (1 año)', included: true },
-					{ title: 'Soporte por email y teléfono', included: true },
-					{ title: 'Estrategia de marketing digital', included: true },
-					{ title: 'E-commerce básico', included: true },
-					{ title: 'Contenido personalizado', included: true },
-					{ title: 'Análisis de competencia', included: true },
+					{
+						title: 'Diseño web responsive premium',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Hasta 10 páginas',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'SEO avanzado',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Formulario de contacto avanzado',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Integración con redes sociales y CRM',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Dominio personalizado (2 años)',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Hosting premium (2 años)',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Soporte prioritario por email y chat',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'E-commerce básico',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Panel administrativo básico',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Gestion profesional de redes sociales',
+						included: true,
+						service_id: 'marketing',
+					},
+					{
+						title:
+							'Campaña avanzada en redes sociales (incluye $200 en presupuesto publicitario)',
+						included: true,
+						service_id: 'marketing',
+					},
+					{
+						title: 'Diseño de Marca Profesional',
+						included: true,
+						service_id: 'graphic-design',
+					},
+					{
+						title: 'Diseño de hasta 10 Ads',
+						included: true,
+						service_id: 'graphic-design',
+					},
+					{
+						title:
+							'Chat AI Respuesta Avanzada (ventas, soporte y atención al cliente)',
+						included: true,
+						service_id: 'ai',
+					},
+					{
+						title: 'Asesoramiento estratégico',
+						included: true,
+						service_id: 'consult',
+					},
+					{
+						title: 'Análisis de competencia',
+						included: true,
+						service_id: 'consult',
+					},
+					{
+						title: 'Integración con Google Analytics',
+						included: true,
+						service_id: 'software-design',
+					},
 				],
 			},
 			{
 				name: 'Stellar Enterprise',
-				price: { monthly: '€2,999', annual: '€29,990' },
+				price: '$2500',
+				payMethod: PAY_METHOD.ONCE,
 				description:
-					'Experiencia digital completa y personalizada para grandes empresas.',
-				accentColor: '#ec4899',
-				secondaryColor: '#f472b6',
-				ctaText: 'Transformar Empresa',
+					'La solución definitiva para negocios que buscan dominar el mercado con herramientas de última generación.',
+				accentColor: '#ea580c', // Naranja intenso
+				secondaryColor: '#fdba74', // Naranja claro
+				ctaText: 'Conocer más',
 				popular: false,
 				features: [
-					{ title: 'Diseño web a medida', included: true },
-					{ title: 'Páginas ilimitadas', included: true },
-					{ title: 'SEO avanzado + SEM', included: true },
-					{ title: 'Sistema CRM integrado', included: true },
-					{ title: 'Estrategia completa en redes', included: true },
+					{
+						title:
+							'Diseño web responsive premium con animaciones personalizadas',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Hasta 20 páginas',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'SEO avanzado y auditoría técnica',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Formulario de contacto avanzado con integración CRM',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title:
+							'Integración con redes sociales, CRM y herramientas de automatización',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Dominio personalizado (3 años)',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Hosting premium (3 años)',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Soporte prioritario 24/7 por email, chat y teléfono',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'E-commerce avanzado con pasarela de pago integrada',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Panel administrativo avanzado con análisis de datos',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Gestión profesional de redes sociales y contenido mensual',
+						included: true,
+						service_id: 'marketing',
+					},
+					{
+						title:
+							'Campaña avanzada en redes sociales (incluye $500 en presupuesto publicitario)',
+						included: true,
+						service_id: 'marketing',
+					},
+					{
+						title: 'Diseño de Marca Premium (Identidad visual completa)',
+						included: true,
+						service_id: 'graphic-design',
+					},
+					{
+						title: 'Diseño de hasta 20 Ads',
+						included: true,
+						service_id: 'graphic-design',
+					},
+					{
+						title:
+							'Chat Bot avanzado con IA (Atención al cliente, ventas y soporte técnico)',
+						included: true,
+						service_id: 'ai',
+					},
+					{
+						title: 'Asesoramiento estratégico personalizado',
+						included: true,
+						service_id: 'consult',
+					},
+					{
+						title: 'Análisis de competencia y mercado',
+						included: true,
+						service_id: 'consult',
+					},
+					{
+						title: 'Integración con Google Analytics y Google Tag Manager',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Email marketing automatizado',
+						included: true,
+						service_id: 'marketing',
+					},
+					{
+						title: 'Landing pages de alta conversión',
+						included: true,
+						service_id: 'software-design',
+					},
+					{
+						title: 'Certificado SSL premium',
+						included: true,
+						service_id: 'software-design',
+					},
+				],
+			},
+		],
+	},
+	{
+		id: 'express',
+		title: 'Express',
+		icon: <Rabbit className='w-6 h-6' />,
+		description:
+			'Soluciones rápidas y efectivas que se ajustan a tu negocio (2-5 días de entrega).',
+		service: SERVICES.EXPRESS,
+		plans: [
+			{
+				name: 'Web Express',
+				price: '$300',
+				payMethod: PAY_METHOD.ONCE,
+				description:
+					'Obtén tu página web lista en tiempo récord con nuestro servicio rápido y eficiente.',
+				accentColor: '#ef4444',
+				secondaryColor: '#f87171',
+				ctaText: 'Crear mi Web Rápido',
+				popular: false,
+				features: [
+					{ title: 'Diseño web responsive', included: true },
+					{ title: 'Desarrollo web', included: true },
+					{ title: 'Hasta 3 páginas', included: true },
+					{ title: 'Formulario de contacto', included: true },
+					{ title: 'SEO básico', included: true },
+					{ title: 'Soporte por email', included: true },
+					{ title: 'Plantilla personalizable', included: true },
 					{ title: 'Dominio personalizado (1 año)', included: true },
-					{ title: 'Hosting premium (1 año)', included: true },
-					{ title: 'Soporte prioritario 24/7', included: true },
-					{ title: 'Plan de marketing integral', included: true },
-					{ title: 'E-commerce completo', included: true },
-					{ title: 'Contenido profesional', included: true },
-					{ title: 'Análisis de mercado completo', included: true },
+					{ title: 'Hosting (1 año)', included: true },
+				],
+			},
+			{
+				name: 'Landing Page',
+				price: '$150',
+				payMethod: PAY_METHOD.ONCE,
+				description:
+					'Maximiza tus conversiones con una landing page diseñada para captar la atención de tus clientes.',
+				accentColor: '#10b981',
+				secondaryColor: '#34d399',
+				ctaText: 'Comenzar Ahora',
+				popular: true,
+				features: [
+					{ title: 'Diseño web responsive', included: true },
+					{ title: 'Estilo de diseño', included: true },
+					{ title: 'Desarrollo web', included: true },
+					{ title: 'Formulario de contacto', included: true },
+					{ title: 'SEO básico', included: true },
+					{ title: 'Soporte por email', included: true },
+					{ title: 'Dominio personalizado (1 año)', included: true },
+					{ title: 'Hosting (1 año)', included: true },
+				],
+			},
+			{
+				name: 'App Móvil Fast',
+				price: '$250',
+				payMethod: PAY_METHOD.ONCE,
+				description:
+					'Obtén una aplicación móvil básica funcional en tiempo récord con nuestro servicio rápido y eficiente.',
+				accentColor: '#f97316',
+				secondaryColor: '#fb923c',
+				ctaText: 'Crear mi App Rápido',
+				popular: false,
+				features: [
+					{
+						title: 'Desarrollo multiplataforma (iOS y Android)',
+						included: true,
+					},
+					{ title: 'Diseño UI/UX básico', included: true },
+					{
+						title: 'Diseño Adaptativo (MiniPhone, Smartphone, Tablet) ',
+						included: true,
+					},
+					{ title: 'Integración con APIs básicas', included: true },
+					{ title: 'Soporte técnico por 3 meses', included: true },
+					{ title: 'Publicación en App Store o Google Play', included: true },
+					{ title: 'Notificaciones push básicas', included: true },
+					{ title: 'Funcionalidades de pago integradas', included: false },
+					{ title: 'Animaciones avanzadas', included: false },
+					{ title: 'Seguridad avanzada', included: false },
+					{ title: 'Optimización de rendimiento', included: false },
+				],
+			},
+			{
+				name: 'Diseño Flash',
+				price: '$200',
+				payMethod: PAY_METHOD.ONCE,
+				description:
+					'Obtén hasta 5 diseños publicitarios profesionales en tiempo récord para impulsar tus campañas.',
+				accentColor: '#8b5cf6',
+				secondaryColor: '#a78bfa',
+				ctaText: 'Ordenar Diseños',
+				popular: false,
+				features: [
+					{ title: 'Hasta 5 diseños publicitarios', included: true },
+					{ title: 'Diseños optimizados para redes sociales', included: true },
+					{
+						title: 'Formatos personalizados (Facebook, Instagram, Google Ads)',
+						included: true,
+					},
+					{ title: 'Revisión y ajustes básicos', included: true },
+					{ title: 'Entrega en 24 horas (por cada diseño)', included: true },
+					{ title: 'Diseños en alta resolución', included: true },
+					{ title: 'Video(s)', included: false },
+					{ title: 'Branding completo', included: false },
+					{ title: 'Estrategia de campaña', included: false },
+					{ title: 'Fotografía profesional', included: false },
+					{ title: 'Copywriting publicitario', included: false },
 				],
 			},
 		],
@@ -397,10 +775,12 @@ export const pricingCategories = [
 		title: 'Diseño & Desarrollo',
 		icon: <Code className='w-6 h-6' />,
 		description: 'Servicios especializados en diseño y desarrollo web',
+		service: SERVICES.SOFTWARE_DESIGN,
 		plans: [
 			{
 				name: 'Pixel Perfect',
-				price: { monthly: '€599', annual: '€5,990' },
+				price: '$499',
+				payMethod: PAY_METHOD.ONCE,
 				description:
 					'Diseño web profesional y desarrollo básico para tu presencia online.',
 				accentColor: '#3b82f6',
@@ -424,7 +804,8 @@ export const pricingCategories = [
 			},
 			{
 				name: 'Code Fusion',
-				price: { monthly: '€1,299', annual: '€12,990' },
+				price: '$999',
+				payMethod: PAY_METHOD.ONCE,
 				description:
 					'Desarrollo web avanzado con funcionalidades personalizadas.',
 				accentColor: '#8b5cf6',
@@ -448,7 +829,8 @@ export const pricingCategories = [
 			},
 			{
 				name: 'Tech Architect',
-				price: { monthly: '€2,499', annual: '€24,990' },
+				price: '$1,499',
+				payMethod: PAY_METHOD.ONCE,
 				description:
 					'Soluciones tecnológicas avanzadas y arquitectura web personalizada.',
 				accentColor: '#ec4899',
@@ -477,10 +859,12 @@ export const pricingCategories = [
 		title: 'Marketing Digital',
 		icon: <Megaphone className='w-6 h-6' />,
 		description: 'Estrategias de marketing para potenciar tu negocio',
+		service: SERVICES.MARKETING,
 		plans: [
 			{
 				name: 'Impulso Digital',
-				price: { monthly: '€499', annual: '€4,990' },
+				price: '$199',
+				payMethod: PAY_METHOD.MONTHLY,
 				description:
 					'Estrategia básica de marketing digital para pequeños negocios.',
 				accentColor: '#3b82f6',
@@ -490,7 +874,7 @@ export const pricingCategories = [
 				features: [
 					{ title: 'Gestión de redes sociales', included: true },
 					{ title: 'SEO básico', included: true },
-					{ title: 'Contenido mensual (4 posts)', included: true },
+					{ title: 'Contenido mensual (5 posts)', included: true },
 					{ title: 'Email marketing básico', included: true },
 					{ title: 'Informe mensual', included: true },
 					{ title: 'Google My Business', included: true },
@@ -504,7 +888,8 @@ export const pricingCategories = [
 			},
 			{
 				name: 'Visibilidad 360',
-				price: { monthly: '€999', annual: '€9,990' },
+				price: '$499',
+				payMethod: PAY_METHOD.MONTHLY,
 				description: 'Marketing digital completo para empresas en crecimiento.',
 				accentColor: '#8b5cf6',
 				secondaryColor: '#a78bfa',
@@ -527,7 +912,8 @@ export const pricingCategories = [
 			},
 			{
 				name: 'Dominio Digital',
-				price: { monthly: '€1,999', annual: '€19,990' },
+				price: '$1,499',
+				payMethod: PAY_METHOD.MONTHLY,
 				description:
 					'Estrategia integral de marketing digital para dominar tu sector.',
 				accentColor: '#ec4899',
@@ -556,10 +942,12 @@ export const pricingCategories = [
 		title: 'IA & Chatbots',
 		icon: <Bot className='w-6 h-6' />,
 		description: 'Soluciones de inteligencia artificial para tu negocio',
+		service: SERVICES.AI,
 		plans: [
 			{
-				name: 'AI Assistant',
-				price: { monthly: '€399', annual: '€3,990' },
+				name: 'ChatBot Assistant',
+				price: '$99',
+				payMethod: PAY_METHOD.MONTHLY,
 				description:
 					'Chatbot básico para atención al cliente y preguntas frecuentes.',
 				accentColor: '#3b82f6',
@@ -583,7 +971,8 @@ export const pricingCategories = [
 			},
 			{
 				name: 'Neural Concierge',
-				price: { monthly: '€899', annual: '€8,990' },
+				price: '$399',
+				payMethod: PAY_METHOD.MONTHLY,
 				description:
 					'Asistente virtual inteligente con capacidades avanzadas de conversación.',
 				accentColor: '#8b5cf6',
@@ -591,9 +980,10 @@ export const pricingCategories = [
 				ctaText: 'Activar Inteligencia',
 				popular: true,
 				features: [
-					{ title: 'Chatbot avanzado', included: true },
+					{ title: 'Chat IA avanzado', included: true },
+					{ title: 'Respuestas avanzadas (imagenes, videos)', included: true },
 					{ title: 'Aprendizaje continuo', included: true },
-					{ title: 'Integración web y móvil', included: true },
+					{ title: 'Integración Web, Móvil, WhatsApp', included: true },
 					{ title: 'Disponibilidad 24/7', included: true },
 					{ title: 'Personalización completa', included: true },
 					{ title: 'Análisis de conversaciones', included: true },
@@ -607,7 +997,8 @@ export const pricingCategories = [
 			},
 			{
 				name: 'Quantum Intelligence',
-				price: { monthly: '€1,799', annual: '€17,990' },
+				price: '$999',
+				payMethod: PAY_METHOD.MONTHLY,
 				description:
 					'Ecosistema de IA completo para transformar la experiencia de tus clientes.',
 				accentColor: '#ec4899',
@@ -633,13 +1024,15 @@ export const pricingCategories = [
 	},
 	{
 		id: 'diseno-grafico',
-		title: 'Diseño Gráfico',
+		title: 'Producción Gráfica',
 		icon: <PenTool className='w-6 h-6' />,
 		description: 'Servicios de diseño visual para tu marca',
+		service: SERVICES.VISUAL_PRODUCTION,
 		plans: [
 			{
 				name: 'Identidad Esencial',
-				price: { monthly: '€349', annual: '€3,490' },
+				price: '$299',
+				payMethod: PAY_METHOD.ONCE,
 				description: 'Paquete básico de identidad visual para tu marca.',
 				accentColor: '#3b82f6',
 				secondaryColor: '#60a5fa',
@@ -662,7 +1055,8 @@ export const pricingCategories = [
 			},
 			{
 				name: 'Branding Premium',
-				price: { monthly: '€799', annual: '€7,990' },
+				price: '$599',
+				payMethod: PAY_METHOD.ONCE,
 				description: 'Identidad de marca completa para destacar en tu sector.',
 				accentColor: '#8b5cf6',
 				secondaryColor: '#a78bfa',
@@ -678,14 +1072,15 @@ export const pricingCategories = [
 					{ title: 'Manual de marca', included: true },
 					{ title: 'Elementos gráficos', included: true },
 					{ title: 'Diseño de packaging básico', included: true },
+					{ title: 'Vídeo corporativo', included: true },
 					{ title: 'Ilustraciones personalizadas', included: false },
 					{ title: 'Fotografía de producto', included: false },
-					{ title: 'Vídeo corporativo', included: false },
 				],
 			},
 			{
 				name: 'Visual Universe',
-				price: { monthly: '€1,499', annual: '€14,990' },
+				price: '$1,199',
+				payMethod: PAY_METHOD.ONCE,
 				description: 'Ecosistema visual completo para una marca inolvidable.',
 				accentColor: '#ec4899',
 				secondaryColor: '#f472b6',
@@ -708,10 +1103,101 @@ export const pricingCategories = [
 			},
 		],
 	},
+	{
+		id: 'video-produccion',
+		title: 'Producción Audiovisual',
+		icon: <Video className='w-6 h-6' />,
+		description: 'Servicios de diseño visual para tu marca',
+		service: SERVICES.VISUAL_PRODUCTION,
+		plans: [
+			{
+				name: 'Video Express',
+				price: '$49',
+				description:
+					'Videos simples y efectivos para redes sociales o promociones rápidas.',
+				accentColor: '#ef4444',
+				secondaryColor: '#f87171',
+				payMethod: PAY_METHOD.ONCE,
+				ctaText: 'Crear Video',
+				popular: true,
+				features: [
+					{ title: 'Video de hasta 1 minuto', included: true },
+					{ title: 'Edición básica con transiciones', included: true },
+					{ title: 'Música de stock', included: true },
+					{ title: 'Grabación con equipo básico', included: true },
+					{ title: 'Subtítulos integrados', included: true },
+					{ title: 'Storyboard básico', included: false },
+					{ title: 'Locución profesional', included: false },
+					{ title: 'Efectos visuales', included: false },
+					{ title: 'Derechos de música premium', included: false },
+					{ title: 'Revisions ilimitadas', included: false },
+				],
+			},
+			{
+				name: 'Video Pro',
+				price: '$249',
+				description:
+					'Videos profesionales para campañas publicitarias o contenido corporativo.',
+				accentColor: '#3b82f6',
+				secondaryColor: '#60a5fa',
+				ctaText: 'Producir Ahora',
+				payMethod: PAY_METHOD.ONCE,
+				popular: false,
+				features: [
+					{ title: 'Video de hasta 3 minutos', included: true },
+					{
+						title: 'Edición avanzada (After Effects/Premiere)',
+						included: true,
+					},
+					{ title: 'Música personalizada o licencias premium', included: true },
+					{ title: 'Grabación con equipo profesional (4K)', included: true },
+					{ title: 'Storyboard detallado', included: true },
+					{ title: 'Locución profesional' },
+					{ title: 'Efectos visuales básicos', included: true },
+					{ title: 'Hasta 3 revisiones', included: true },
+					{ title: 'Animaciones 2D básicas', included: false },
+					{ title: 'Drones o tomas aéreas', included: false },
+					{ title: 'Actor o modelo profesional', included: false },
+				],
+			},
+			{
+				name: 'Video Premium',
+				price: '$1,499',
+				description:
+					'Producciones audiovisuales de alto impacto con recursos exclusivos.',
+				accentColor: '#8b5cf6',
+				secondaryColor: '#a78bfa',
+				ctaText: 'Proyecto Élite',
+				popular: false,
+				payMethod: PAY_METHOD.ONCE,
+				features: [
+					{ title: 'Video de hasta 5+ minutos', included: true },
+					{ title: 'Edición premium + motion graphics', included: true },
+					{
+						title: 'Tomas con drones o equipos especializados',
+						included: true,
+					},
+					{ title: 'Actor/modelo profesional', included: true },
+					{ title: 'Locución en múltiples idiomas', included: true },
+					{ title: 'Animaciones 2D/3D', included: true },
+					{ title: 'Música original compuesta', included: true },
+					{ title: 'Revisions ilimitadas', included: true },
+					{ title: 'Estrategia de distribución', included: true },
+					{ title: 'Fotografía BTS (Behind The Scenes)', included: false },
+					{ title: 'Campaña multiplataforma', included: false },
+				],
+			},
+		],
+	},
 ]
-
 // FAQ data
-export const pricingFAQs = [
+export const pricingFAQs: FAQ[] = [
+	{
+		question:
+			'¿Qué diferencia hay entre una Landing Page y un Sitio Web Completo?',
+		answer:
+			'Una Landing Page es una página única diseñada para captar clientes potenciales, mientras que un Sitio Web Completo es un sitio completo con varias páginas y funcionalidades.',
+	},
 	{
 		question: '¿Qué incluye el mantenimiento web?',
 		answer:
@@ -741,5 +1227,96 @@ export const pricingFAQs = [
 		question: '¿Qué tecnologías utilizan para el desarrollo?',
 		answer:
 			'Utilizamos tecnologías modernas como React, Next.js, Node.js, y otras herramientas de vanguardia para crear soluciones web rápidas, seguras y escalables.',
+	},
+]
+
+export const testimonials = [
+	{
+		name: 'Juan Pérez',
+		position: 'CEO',
+		company: 'Tech Solutions',
+		avatar:
+			'https://images.unsplash.com/photo-1502767089025-6572583495b9?q=80&w=1000',
+		rating: 5,
+		text: 'Excelente servicio y atención al cliente. Altamente recomendados.',
+		date: 'Marzo 2023',
+		project: 'Desarrollo Web',
+	},
+	{
+		name: 'María López',
+		position: 'Marketing Manager',
+		company: 'Creative Agency',
+		avatar:
+			'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1000',
+		rating: 4,
+		text: 'Gran experiencia trabajando con el equipo. Resultados excepcionales.',
+		date: 'Febrero 2023',
+		project: 'Marketing Digital',
+	},
+	{
+		name: 'Carlos Sánchez',
+		position: 'CTO',
+		company: 'Innovatech',
+		avatar:
+			'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000',
+		rating: 5,
+		text: 'Soluciones innovadoras y soporte técnico de primera clase.',
+		date: 'Enero 2023',
+		project: 'Inteligencia Artificial',
+	},
+	{
+		name: 'Laura Gómez',
+		position: 'Product Manager',
+		company: 'E-commerce Inc.',
+		avatar:
+			'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000',
+		rating: 4,
+		text: 'Muy satisfechos con el diseño y desarrollo de nuestra tienda online.',
+		date: 'Diciembre 2022',
+		project: 'Desarrollo E-commerce',
+	},
+	{
+		name: 'Sofía Martínez',
+		position: 'UX Designer',
+		company: 'Design Studio',
+		avatar:
+			'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000',
+		rating: 5,
+		text: 'El equipo de diseño superó nuestras expectativas. ¡Increíble trabajo!',
+		date: 'Noviembre 2022',
+		project: 'Diseño Gráfico',
+	},
+	{
+		name: 'Miguel Torres',
+		position: 'Project Manager',
+		company: 'Startup Hub',
+		avatar:
+			'https://images.unsplash.com/photo-1502767089025-6572583495b9?q=80&w=1000',
+		rating: 5,
+		text: 'Profesionales y eficientes. Nos ayudaron a lanzar nuestro producto a tiempo.',
+		date: 'Octubre 2022',
+		project: 'Desarrollo de Software',
+	},
+	{
+		name: 'Elena Ruiz',
+		position: 'CMO',
+		company: 'Marketing Experts',
+		avatar:
+			'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1000',
+		rating: 4,
+		text: 'Estrategias de marketing efectivas que aumentaron nuestras ventas.',
+		date: 'Septiembre 2022',
+		project: 'Marketing Digital',
+	},
+	{
+		name: 'David Fernández',
+		position: 'CTO',
+		company: 'Tech Innovators',
+		avatar:
+			'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000',
+		rating: 5,
+		text: 'Implementaron soluciones de IA que transformaron nuestro negocio.',
+		date: 'Agosto 2022',
+		project: 'Inteligencia Artificial',
 	},
 ]
