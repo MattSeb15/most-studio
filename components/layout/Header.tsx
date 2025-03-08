@@ -3,6 +3,7 @@
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { MostStudioLogo } from '../ui/logo'
 
 interface HeaderProps {
 	isDark: boolean
@@ -60,7 +61,7 @@ export function Header({ isDark, toggleTheme }: HeaderProps) {
 					<div
 						className='relative group cursor-pointer'
 						onClick={scrollToTop}>
-						<div className='text-2xl font-bold gradient-text'>Most Studio</div>
+						<MostStudioLogo />
 						<div className='logo-glow'></div>
 						<div className='absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300'></div>
 					</div>
@@ -80,6 +81,11 @@ export function Header({ isDark, toggleTheme }: HeaderProps) {
 							)
 						)}
 						<button
+							style={{
+								background: isDark
+									? 'linear-gradient(to right, #3b82f6, #8b5cf6)'
+									: 'linear-gradient(to right, rgba(59, 130, 246, 0.7), rgba(139, 92, 246, 0.7))',
+							}}
 							onClick={toggleTheme}
 							className={`theme-switch ${isDark ? 'dark' : ''}`}
 							aria-label='Toggle theme'>
@@ -89,6 +95,11 @@ export function Header({ isDark, toggleTheme }: HeaderProps) {
 
 					<div className='md:hidden flex items-center space-x-4'>
 						<button
+							style={{
+								background: isDark
+									? 'linear-gradient(to right, #3b82f6, #8b5cf6)'
+									: 'linear-gradient(to right, rgba(59, 130, 246, 0.7), rgba(139, 92, 246, 0.7))',
+							}}
 							onClick={toggleTheme}
 							className={`theme-switch ${isDark ? 'dark' : ''} mr-2`}
 							aria-label='Toggle theme'>
