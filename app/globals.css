@@ -231,6 +231,20 @@
 	background-size: 200% auto;
 }
 
+.gradient-text-var {
+	background: linear-gradient(
+		to right,
+		var(--accent-color-1),
+		var(--accent-color-2),
+		var(--accent-color-1)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: gradient 5s linear infinite;
+	background-size: 200% auto;
+}
+
 .hero-title {
 	position: relative;
 	display: inline-block;
@@ -279,7 +293,7 @@
 
 /* Enhanced Input Styles */
 .custom-input {
-	@apply w-full px-6 py-4 bg-transparent border-2 border-gray-700 rounded-xl outline-none transition-all duration-300;
+	@apply w-full px-4 py-2 sm:px-6 sm:py-4 text-sm sm:text-base bg-transparent border-2 border-gray-700 rounded-xl outline-none transition-all duration-300;
 	background: rgba(255, 255, 255, 0.03);
 	backdrop-filter: blur(10px);
 }
@@ -435,7 +449,7 @@
 /* Theme Switch */
 .theme-switch {
 	@apply relative w-12 h-6 rounded-full cursor-pointer transition-colors duration-300;
-	background: linear-gradient(to right, #3b82f6, #8b5cf6);
+	/* background: linear-gradient(to right, #3b82f6, #8b5cf6); */
 }
 
 .theme-switch::after {
@@ -471,7 +485,7 @@
 /* Service Cards Enhanced Styles */
 .service-card {
 	@apply relative overflow-hidden;
-	background: rgba(255, 255, 255, 0.03);
+	/* 	background: rgba(255, 255, 255, 0.03); */
 	backdrop-filter: blur(10px);
 }
 
@@ -534,6 +548,9 @@
 		transparent 80%
 	);
 }
+.service-card:hover {
+	background: rgba(255, 255, 255, 0.03);
+}
 
 .service-card:hover::before {
 	opacity: 1;
@@ -556,6 +573,7 @@
 		var(--accent-color-2)
 	);
 	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 	-webkit-mask-composite: xor;
 	mask-composite: exclude;
 	opacity: 0.5;
@@ -960,14 +978,12 @@
 /* Achievement Section Styles */
 .achievement-card {
 	@apply relative p-6 rounded-xl text-center transition-all duration-300;
-	background: rgba(255, 255, 255, 0.03);
-	backdrop-filter: blur(10px);
 	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .achievement-card:hover {
+	@apply bg-background/20;
 	transform: translateY(-5px);
-	background: rgba(255, 255, 255, 0.05);
 }
 
 .achievement-icon {
@@ -1069,7 +1085,7 @@
 /* Theme Switch Enhancement */
 .theme-switch {
 	@apply relative w-12 h-6 rounded-full cursor-pointer transition-all duration-300;
-	background: linear-gradient(to right, #3b82f6, #8b5cf6);
+	/* 	background: linear-gradient(to right, #3b82f6, #8b5cf6); */
 	box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
@@ -1408,4 +1424,11 @@
 	animation: gradient-animation 3s ease infinite;
 	border-radius: inherit;
 	z-index: -1;
+}
+
+.ecuador-flag-gradient-text {
+	background: linear-gradient(to right, #ffd700 0%, #ffd700 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
 }
