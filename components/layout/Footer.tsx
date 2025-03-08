@@ -1,6 +1,7 @@
 'use client'
 
 import { useScrollAnimation } from '@/lib/hooks/useScrollAnimation'
+import { MostStudioLogo } from '../ui/logo'
 
 export function Footer() {
 	useScrollAnimation()
@@ -10,9 +11,7 @@ export function Footer() {
 			<div className='container mx-auto px-6'>
 				<div className='grid grid-cols-1 md:grid-cols-4 gap-12 stagger-children'>
 					<div>
-						<div className='text-2xl font-bold gradient-text mb-4'>
-							Most Studio
-						</div>
+						<MostStudioLogo />
 						<p className='text-foreground/80'>
 							Transformando ideas en experiencias digitales excepcionales.
 						</p>
@@ -29,8 +28,8 @@ export function Footer() {
 					<div>
 						<h4 className='text-lg font-semibold mb-4'>Compañía</h4>
 						<ul className='space-y-2 text-foreground/80'>
-							<li>Sobre Nosotros</li>
 							<li>Portafolio</li>
+							<li>Sobre Nosotros</li>
 							<li>Testimonios</li>
 							<li>Contacto</li>
 						</ul>
@@ -38,9 +37,9 @@ export function Footer() {
 					<div>
 						<h4 className='text-lg font-semibold mb-4'>Contacto</h4>
 						<ul className='space-y-2 text-foreground/80'>
-							<li>most@gmail.com</li>
-							<li>+34 900 123 456</li>
-							<li>Madrid, España</li>
+							<li>moststudio@gmail.com</li>
+							<li>(+593) 123456789</li>
+							<li>Quito, Ecuador</li>
 						</ul>
 					</div>
 				</div>
