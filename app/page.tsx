@@ -9,6 +9,7 @@ import { Portfolio } from '@/components/sections/Portfolio'
 import { Pricing } from '@/components/sections/Pricing'
 import { About } from '@/components/sections/About'
 import { Contact } from '@/components/sections/Contact'
+import { Testimonials } from '@/components/sections/Testimonials'
 
 export default function Home() {
 	const [isDark, setIsDark] = useState(true)
@@ -100,6 +101,7 @@ export default function Home() {
 			<Services />
 			<Portfolio />
 			<Pricing />
+			<Testimonials />
 			<About />
 			<Contact />
 			<Footer />
