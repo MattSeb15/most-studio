@@ -1,8 +1,29 @@
 'use client'
 
-import { Lightbulb, Trophy, Users, Award, Target } from 'lucide-react'
+import {
+	Lightbulb,
+	Trophy,
+	Users,
+	Award,
+	Target,
+	BotMessageSquare,
+	Wand,
+	ChartPie,
+	ChartNoAxesColumn,
+	Film,
+	PencilRuler,
+	Briefcase,
+	Code,
+	Rabbit,
+	BrainCircuit,
+	Megaphone,
+	MessageCircleQuestion,
+} from 'lucide-react'
 import Image from 'next/image'
 import { teamMembers, timeline, achievements } from '@/lib/data'
+import { MostStudioLogo } from '../ui/logo'
+import { SERVICES } from '@/lib/types'
+import React, { ReactNode } from 'react'
 
 export function About() {
 	return (
@@ -17,15 +38,113 @@ export function About() {
 						<Lightbulb className='w-12 h-12 text-blue-500' />
 					</div>
 					<h2 className='text-3xl md:text-4xl font-bold mb-6'>Quiénes Somos</h2>
-					<p className='text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto'>
-						Somos un equipo apasionado por la creación de experiencias digitales
-						excepcionales. Combinamos creatividad, tecnología y estrategia para
-						transformar ideas en realidades digitales.
-					</p>
+					<div className='mb-5 text-foreground/80 text-lg md:text-xl max-w-3xl mx-auto'>
+						Somos{' '}
+						<MostStudioLogo
+							isInline
+							className='justify-end items-start'
+						/>{' '}
+						un equipo
+						<span className='font-bold ecuador-flag-gradient-text'>
+							{' '}
+							ECUATORIANO
+						</span>{' '}
+						apasionado por la creación de experiencias digitales excepcionales.
+						Combinamos{' '}
+						<span className='font-semibold text-foreground'>
+							CREATIVIDAD
+						</span>,{' '}
+						<span className='font-semibold text-foreground'>TECNOLOGÍA</span> y{' '}
+						<span className='font-semibold text-foreground'>ESTRATEGIA</span>{' '}
+						para transformar ideas en realidades digitales que impulsan negocios
+						y marcas hacia el éxito.
+					</div>
+					<div className='max-w-3xl mx-auto mt-6'>
+						<div
+							style={{
+								backgroundImage: 'url(/most_studio_logo_500.avif)',
+								backgroundSize: 'cover',
+								backgroundPosition: 'center',
+								backgroundRepeat: 'no-repeat',
+							}}
+							className='relative w-[250px] h-[250px] md:w-[380px] md:h-[380px] lg:w-[500px] lg:h-[500px] mx-auto mt-6'>
+							<div className='absolute bottom-0 sm:bottom-10 -left-4 sm:-left-28 flex flex-col gap-2 items-end'>
+								<ServiceContainer text='Desarrollo de Software'>
+									<Code />
+								</ServiceContainer>
+								<ServiceContainer text='Diseño de Software'>
+									<Wand />
+								</ServiceContainer>
+								<ServiceContainer text={SERVICES.EXPRESS.title}>
+									<Rabbit />
+								</ServiceContainer>
+							</div>
+							<div className='absolute top-0 sm:top-10 -left-4 sm:-left-28 flex flex-col gap-2 items-end'>
+								<ServiceContainer text={SERVICES.AI.title}>
+									<BrainCircuit />
+								</ServiceContainer>
+								<ServiceContainer text='Chat Bots'>
+									<BotMessageSquare />
+								</ServiceContainer>
+							</div>
+							<div className='absolute top-5 sm:top-10 -right-4 sm:-right-28 flex flex-col gap-2 items-start'>
+								<ServiceContainer text={SERVICES.MARKETING.title}>
+									<Megaphone />
+								</ServiceContainer>
+								<ServiceContainer text='Gestion de Redes'>
+									<ChartNoAxesColumn />
+								</ServiceContainer>
+							</div>
+							<div className='absolute right-0 bottom-1/2 transform translate-y-1/2 flex flex-col gap-2 items-start'>
+								<ServiceContainer text='Diseño Gráfico'>
+									<PencilRuler />
+								</ServiceContainer>
+								<ServiceContainer text='Creación de Videos'>
+									<Film />
+								</ServiceContainer>
+							</div>
+							<div className='absolute bottom-5 sm:bottom-10 -right-5 sm:-right-28 flex flex-col gap-2 items-start'>
+								<ServiceContainer text={SERVICES.CONSULT.title}>
+									<MessageCircleQuestion />
+								</ServiceContainer>
+								<ServiceContainer text='Asesoramiento'>
+									<Briefcase />
+								</ServiceContainer>
+							</div>
+						</div>
+					</div>
+					<div className='flex flex-col sm:flex-row mt-5 space-y-4 space-x-0 sm:space-y-0 sm:space-x-4 text-foreground/80 text-lg md:text-xl max-w-3xl mx-auto'>
+						<div>
+							Con{' '}
+							<span className='font-semibold text-foreground'>
+								AÑOS DE EXPERIENCIA
+							</span>{' '}
+							en el sector, hemos trabajado con clientes de diversas industrias,
+							brindando soluciones innovadoras y personalizadas que cumplen con
+							sus necesidades específicas. Nos enorgullece ser{' '}
+							<span className='font-semibold text-foreground'>PIONEROS</span> en
+							Ecuador en ofrecer un paquete completo de servicios digitales,
+							cubriendo todas las áreas esenciales para el crecimiento de una
+							marca en el mundo digital.
+						</div>
+						<div>
+							<span className='text-foreground font-semibold'>
+								A DIFERENCIA DE OTRAS AGENCIAS
+							</span>
+							, todo nuestro trabajo es realizado por nuestro equipo interno,
+							sin necesidad de que nuestros clientes recurran a diferentes
+							proveedores. Ofrecemos un ecosistema integral que incluye
+							<span className='text-foreground font-semibold'>
+								{' '}
+								MÁS DE 5 SERVICIOS
+							</span>{' '}
+							digitales en un solo paquete.
+						</div>
+					</div>
 				</div>
 
 				{/* Timeline */}
-				<div className='timeline-container mb-24'>
+				{/* 	<div className='timeline-container mb-24'>
 					<h3 className='text-3xl font-bold text-center mb-12 fade-up'>
 						Nuestra Historia
 					</h3>
@@ -40,10 +159,10 @@ export function About() {
 							</div>
 						</div>
 					))}
-				</div>
+				</div> */}
 
 				{/* Team */}
-				<div className='mb-24'>
+				{/* 				<div className='mb-24'>
 					<h3 className='text-3xl font-bold text-center mb-12 fade-up'>
 						Nuestro Equipo
 					</h3>
@@ -68,7 +187,7 @@ export function About() {
 							</div>
 						))}
 					</div>
-				</div>
+				</div> */}
 
 				{/* Achievements */}
 				<div>
@@ -91,5 +210,20 @@ export function About() {
 				</div>
 			</div>
 		</section>
+	)
+}
+const ServiceContainer: React.FC<{ children: ReactNode; text: string }> = ({
+	children,
+	text,
+}) => {
+	return (
+		<div className='bg-background/50 backdrop-blur-sm px-3 py-1 rounded-md text-xs md:text-sm min-w-64 max-w-fit'>
+			<div className='flex items-center space-x-2'>
+				<span>{text}</span>
+				{React.cloneElement(children as React.ReactElement, {
+					className: 'w-4 h-4 md:w-6 md:h-6 hidden sm:block',
+				})}
+			</div>
+		</div>
 	)
 }
