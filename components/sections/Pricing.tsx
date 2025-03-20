@@ -12,6 +12,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from '../ui/accordion'
+import Link from 'next/link'
 
 export function Pricing() {
 	const [activeCategory, setActiveCategory] = useState(0)
@@ -314,9 +315,14 @@ export function Pricing() {
 								y obtener un presupuesto a medida.
 							</p>
 						</div>
-						<button className='px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-semibold hover:scale-105 transition-transform'>
-							Solicitar Presupuesto
-						</button>
+						<Link
+							href='#contacto'
+							passHref
+							className='flex-shrink-0 z-10'>
+							<button className='px-8 py-4 z-10 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-semibold hover:scale-105 transition-transform'>
+								Solicitar Presupuesto
+							</button>
+						</Link>
 					</div>
 				</div>
 
