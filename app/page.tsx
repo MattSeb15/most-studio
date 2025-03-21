@@ -10,6 +10,7 @@ import { Pricing } from '@/components/sections/Pricing'
 import { About } from '@/components/sections/About'
 import { Contact } from '@/components/sections/Contact'
 import { Testimonials } from '@/components/sections/Testimonials'
+import Head from 'next/head'
 
 export default function Home() {
 	const [isDark, setIsDark] = useState(true)
@@ -78,33 +79,48 @@ export default function Home() {
 	}, [])
 
 	return (
-		<div className='min-h-screen bg-background text-foreground transition-colors duration-300 animated-gradient-bg'>
-			{/* Custom cursor (hidden on mobile) */}
-			<div
-				className='custom-cursor hidden md:block'
-				style={{
-					left: `${cursorPosition.x}px`,
-					top: `${cursorPosition.y}px`,
-				}}></div>
-			<div
-				className='custom-cursor-follower hidden md:block'
-				style={{
-					left: `${cursorFollowerPosition.x}px`,
-					top: `${cursorFollowerPosition.y}px`,
-				}}></div>
+		<>
+			<Head>
+				<title>Most Studio - Diseño y Desarrollo Web Profesional</title>
+				<meta
+					name='description'
+					content='Agencia de diseño y desarrollo web especializada en crear experiencias digitales excepcionales. Servicios de diseño web, desarrollo, marketing digital y más'
+				/>
+				<meta
+					name='keywords'
+					content='diseño web, desarrollo web, marketing digital, agencia de diseño, experiencias digitales, servicios web, desarrollo de sitios, diseño UX/UI, optimización SEO, branding digital'
+				/>
+			</Head>
+			<div className='min-h-screen bg-background text-foreground transition-colors duration-300 animated-gradient-bg'>
+				{/* Custom cursor (hidden on mobile) */}
+				<div
+					className='custom-cursor hidden md:block'
+					style={{
+						left: `${cursorPosition.x}px`,
+						top: `${cursorPosition.y}px`,
+					}}></div>
+				<div
+					className='custom-cursor-follower hidden md:block'
+					style={{
+						left: `${cursorFollowerPosition.x}px`,
+						top: `${cursorFollowerPosition.y}px`,
+					}}></div>
 
-			<Header
-				isDark={isDark}
-				toggleTheme={toggleTheme}
-			/>
-			<Hero />
-			<Services />
-			<Portfolio />
-			<Pricing />
-			<Testimonials />
-			<About />
-			<Contact />
-			<Footer />
-		</div>
+				<Header
+					isDark={isDark}
+					toggleTheme={toggleTheme}
+				/>
+				<main>
+					<Hero />
+					<Services />
+					<Portfolio />
+					<Pricing />
+					<Testimonials />
+					<About />
+					<Contact />
+				</main>
+				<Footer />
+			</div>
+		</>
 	)
 }
