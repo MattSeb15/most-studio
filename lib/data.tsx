@@ -1232,17 +1232,6 @@ export const pricingFAQs: FAQ[] = [
 
 export const testimonials = [
 	{
-		name: 'Juan Pérez',
-		position: 'CEO',
-		company: 'Tech Solutions',
-		avatar:
-			'https://images.unsplash.com/photo-1502767089025-6572583495b9?q=80&w=1000',
-		rating: 5,
-		text: 'Excelente servicio y atención al cliente. Altamente recomendados.',
-		date: 'Marzo 2023',
-		project: 'Desarrollo Web',
-	},
-	{
 		name: 'María López',
 		position: 'Marketing Manager',
 		company: 'Creative Agency',
@@ -1285,17 +1274,6 @@ export const testimonials = [
 		text: 'El equipo de diseño superó nuestras expectativas. ¡Increíble trabajo!',
 		date: 'Noviembre 2022',
 		project: 'Diseño Gráfico',
-	},
-	{
-		name: 'Miguel Torres',
-		position: 'Project Manager',
-		company: 'Startup Hub',
-		avatar:
-			'https://images.unsplash.com/photo-1502767089025-6572583495b9?q=80&w=1000',
-		rating: 5,
-		text: 'Profesionales y eficientes. Nos ayudaron a lanzar nuestro producto a tiempo.',
-		date: 'Octubre 2022',
-		project: 'Desarrollo de Software',
 	},
 	{
 		name: 'Elena Ruiz',
